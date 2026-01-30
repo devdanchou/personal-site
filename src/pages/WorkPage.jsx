@@ -1,13 +1,13 @@
 import NavBar from "../shared-components/NavBar";
 import IntroSection from "../components/IntroSection";
 
-const LandingPage = () => {
+const WorkPage = () => {
   return (
     <>
       <NavBar />
-      <IntroSection />
+      <p>Work</p>
     </>
   );
 };
 
-export default LandingPage;
+export default WorkPage;

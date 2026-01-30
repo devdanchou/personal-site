@@ -1,31 +1,44 @@
-const SECTIONS = [
-  { type: "work", label: "work" },
-  { type: "about", label: "about" },
-  { type: "email", icon: "fa-regular fa-envelope", ariaLabel: "Email" },
-  {
-    type: "linkedin",
-    icon: "fa-brands fa-linkedin",
-    ariaLabel: "Linkedin",
-  },
-];
+import { Link } from "react-router-dom";
+import { SECTIONS } from "../../constants/Section";
 
 const NavBar = () => {
+  const NavItem = ({ as, to, onClick, children, ariaLabel }) => {
+    const className = "text-lg h-full mr-2 py-5 px-7 hover:text-slate-500";
+    if (as === "link") {
+      return (
+        <Link to={to} className={className} aria-label={ariaLabel}>
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <button onClick={onClick} className={className} aria-label={ariaLabel}>
+        {children}
+      </button>
+    );
+  };
+
   return (
     <>
-      <nav className="flex justify-end font-domine text-slate-800 text-2xl h-full border-b border-slate-500">
-        <div className="flex w-full max-w-7xl">
-          <div className="flex flex-1 justify-start py-5">Logo</div>
-          <div className="flex-1 justify-end">
-            {SECTIONS.map(({ type, label, icon, ariaLabel }) => (
-              <button
-                key={type}
-                className="ml-6 text-lg h-full py-5 hover:text-slate-500"
-                aria-label={ariaLabel || label}
-              >
+      <nav className="flex justify-center font-domine text-slate-700 text-2xl h-full">
+        <div className="flex items-center justify-between w-full max-w-7xl">
+          <div className="flex flex-1 justify-start py-5 px-5">
+            <Link to="/" aria-label="Go to homepage">
+              Logo
+            </Link>
+          </div>
+          <div className="hidden sm:flex justify-end mx-4">
+            {SECTIONS.map(({ type, label, icon, ...props }) => (
+              <NavItem key={type} {...props}>
                 {label && <span>{label}</span>}
-                {icon && <i className={icon}></i>}
-              </button>
+                {icon && <i className={icon} />}
+              </NavItem>
             ))}
+          </div>
+          <div className="flex flex-1 justify-end sm:hidden py-4 px-5">
+            <button aria-label="open menu">
+              <i className="fa-solid fa-bars text-3xl text-slate-700 font-medium hover:text-slate-500"></i>
+            </button>
           </div>
         </div>
       </nav>

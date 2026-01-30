@@ -7,7 +7,8 @@ export default {
         lato: ['Lato'],
         zain: ['Zain'],
         kleeOne: ['Klee One'],
-        domine: ['Domine']
+        domine: ['Domine'],
+        bvp: ['Be Vietnam Pro']
       }
     },
   },
