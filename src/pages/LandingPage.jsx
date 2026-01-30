@@ -4,8 +4,12 @@ import IntroSection from "../components/IntroSection";
 const LandingPage = () => {
   return (
     <>
-      <NavBar />
-      <IntroSection />
+      <nav>
+        <NavBar />
+      </nav>
+      <section>
+        <IntroSection />
+      </section>
     </>
   );
 };

@@ -1,22 +1,14 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SECTIONS } from "../../constants/Section";
+import NavItem from "./NavItem";
+import ModalWrapper from "../../components/ModalWrapper";
+import { AnimatePresence } from "framer-motion";
+import MobileMenuModal from "../../components/MobileMenuModal";
 
 const NavBar = () => {
-  const NavItem = ({ as, to, onClick, children, ariaLabel }) => {
-    const className = "text-lg h-full mr-2 py-5 px-7 hover:text-slate-500";
-    if (as === "link") {
-      return (
-        <Link to={to} className={className} aria-label={ariaLabel}>
-          {children}
-        </Link>
-      );
-    }
-    return (
-      <button onClick={onClick} className={className} aria-label={ariaLabel}>
-        {children}
-      </button>
-    );
-  };
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
 
   return (
     <>
@@ -24,22 +16,35 @@ const NavBar = () => {
         <div className="flex items-center justify-between w-full max-w-7xl">
           <div className="flex flex-1 justify-start py-5 px-5">
             <Link to="/" aria-label="Go to homepage">
-              Logo
+              [Logo]
             </Link>
           </div>
           <div className="hidden sm:flex justify-end mx-4">
             {SECTIONS.map(({ type, label, icon, ...props }) => (
-              <NavItem key={type} {...props}>
+              <NavItem key={type} {...props} size="desktop">
                 {label && <span>{label}</span>}
                 {icon && <i className={icon} />}
               </NavItem>
             ))}
           </div>
           <div className="flex flex-1 justify-end sm:hidden py-4 px-5">
-            <button aria-label="open menu">
-              <i className="fa-solid fa-bars text-3xl text-slate-700 font-medium hover:text-slate-500"></i>
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="open menu"
+            >
+              <i className="fa-solid fa-bars text-3xl font-medium hover:text-slate-500"></i>
             </button>
           </div>
+        </div>
+        <div className="sm:hidden">
+          <AnimatePresence>
+            <ModalWrapper
+              isOpen={mobileMenuOpen}
+              onCloseClick={() => setMobileMenuOpen(false)}
+            >
+              <MobileMenuModal />
+            </ModalWrapper>
+          </AnimatePresence>
         </div>
       </nav>
     </>

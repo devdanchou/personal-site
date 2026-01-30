@@ -4,8 +4,12 @@ import BioSection from "../components/BioSection";
 const AboutPage = () => {
   return (
     <>
-      <NavBar />
-      <BioSection />
+      <nav>
+        <NavBar />
+      </nav>
+      <section>
+        <BioSection />
+      </section>
     </>
   );
 };

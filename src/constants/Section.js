@@ -2,6 +2,13 @@ export const SECTIONS = [
   { type: "work", label: "work", as: "link", to: "/work" },
   { type: "about", label: "about", as: "link", to: "/about" },
   {
+    type: "github",
+    icon: "fa-brands fa-github",
+    ariaLabel: "Github",
+    as: "button",
+    onClick: () => window.open("https://github.com/devdanchou", "_blank"),
+  },
+  {
     type: "linkedin",
     icon: "fa-brands fa-linkedin",
     ariaLabel: "LinkedIn",
