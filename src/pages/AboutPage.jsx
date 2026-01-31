@@ -1,5 +1,5 @@
 import NavBar from "../shared-components/NavBar";
-import BioSection from "../components/BioSection";
+import AboutSection from "../components/AboutSection";
 
 const AboutPage = () => {
   return (
@@ -8,7 +8,7 @@ const AboutPage = () => {
         <NavBar />
       </nav>
       <section>
-        <BioSection />
+        <AboutSection />
       </section>
     </>
   );

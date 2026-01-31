@@ -17,7 +17,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between w-full max-w-7xl">
           <div className="flex flex-1 justify-start py-5 px-5">
             <Link to="/" aria-label="Go to homepage">
-              <img className="h-16" src={logoImg} />
+              <img className="h-16" src={logoImg} alt="Logo" />
             </Link>
           </div>
           <div className="hidden sm:flex justify-end mx-4">
