@@ -1,3 +1,5 @@
+import projectImg from "../assets/project-placeholder.png";
+
 export const SECTIONS = [
   { type: "work", label: "work", as: "link", to: "/work" },
   { type: "about", label: "about", as: "link", to: "/about" },
@@ -22,4 +24,11 @@ export const SECTIONS = [
     as: "button",
     onClick: () => window.location = "mailto:daniel.cw.chou@gmail.com",
   }
+];
+
+export const PROJECT_SECTIONS = [
+  { img: projectImg, name: "Project one" },
+  { img: projectImg, name: "Project two" },
+  { img: projectImg, name: "Project three" },
+  { img: projectImg, name: "Project four" },
 ];

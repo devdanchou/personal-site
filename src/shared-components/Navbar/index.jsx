@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <>
       <nav className="flex justify-center font-domine text-slate-700 text-2xl h-full">
-        <div className="flex items-center justify-between w-full max-w-7xl">
+        <div className="flex items-center justify-between w-full max-w-full lg:max-w-[1400px] xl:max-w-[1600px]">
           <div className="flex flex-1 justify-start py-5 px-5">
             <Link to="/" aria-label="Go to homepage">
               <img className="h-16" src={logoImg} alt="Logo" />
