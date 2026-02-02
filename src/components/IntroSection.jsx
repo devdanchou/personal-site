@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const IntroSection = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{
         delay: 0.3,
@@ -17,7 +17,7 @@ const IntroSection = () => {
         className="
       max-w-6xl mx-5 text-center
       font-zain font-light
-      text-2xl md:text-3xl lg:text-4xl
+      text-2xl lg:text-3xl
       leading-relaxed tracking-tight text-slate-700"
       >
         Daniel Chou is a full-stack software engineer. He has a soft spot for

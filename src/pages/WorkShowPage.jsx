@@ -1,7 +1,6 @@
 import NavBar from "../shared-components/NavBar";
-import IntroSection from "../components/IntroSection";
 
-const WorkPage = () => {
+const WorkShowPage = () => {
   return (
     <>
       <NavBar />
@@ -10,4 +9,4 @@ const WorkPage = () => {
   );
 };
 
-export default WorkPage;
+export default WorkShowPage;

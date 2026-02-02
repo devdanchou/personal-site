@@ -7,10 +7,11 @@ const TEXT_SIZE = {
   desktop: "text-lg",
 };
 
-const NavItem = ({ as, to, onClick, children, ariaLabel, size }) => {
+const NavItem = ({ as, to, onClick, children, ariaLabel, size, isActive }) => {
   const className = clsx(
     "h-full mr-2 py-5 px-5 hover:text-slate-500",
     TEXT_SIZE[size],
+    isActive && "underline underline-offset-4",
   );
 
   if (as === "link") {

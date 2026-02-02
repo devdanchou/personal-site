@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import AboutPage from "./pages/AboutPage";
-import WorkPage from "./pages/WorkPage";
+import WorkShowPage from "./pages/WorkShowPage";
 
 const App = () => {
   return (
@@ -10,7 +10,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/work" element={<WorkPage />} />
+          <Route path="/work" element={<LandingPage />} />
+          <Route path="/work/:projectName" element={<WorkShowPage />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { SECTIONS } from "../../constants/Section";
 import NavItem from "./NavItem";
 import ModalWrapper from "../../components/ModalWrapper";
@@ -10,6 +10,13 @@ import logoImg from "../../assets/logo.png";
 const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  const NAV_ACTIVE_MAP = {
+    work: (path) => path === "/" || path.startsWith("/work"),
+    about: (path) => path.startsWith("/about"),
+  };
 
   return (
     <>
@@ -21,8 +28,15 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="hidden sm:flex justify-end mx-4">
-            {SECTIONS.map(({ type, label, icon, ...props }) => (
-              <NavItem key={type} {...props} size="desktop">
+            {SECTIONS.map(({ type, label, icon, as, to, ...props }) => (
+              <NavItem
+                key={type}
+                as={as}
+                to={to}
+                {...props}
+                size="desktop"
+                isActive={NAV_ACTIVE_MAP[type]?.(pathname)}
+              >
                 {label && <span>{label}</span>}
                 {icon && <i className={icon} />}
               </NavItem>

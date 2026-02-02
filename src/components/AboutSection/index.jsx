@@ -12,7 +12,7 @@ const AboutSection = () => {
           ></img>
         </div>
         <div className="md:basis-[45%] lg:basis-[40%]">
-          <h2 className="text-5xl mb-5 font-normal font-domine">
+          <h2 className="text-4xl md:text-5xl mb-5 font-normal font-domine">
             Most people call me Dan.
           </h2>
           <p className="text-lg md:text-xl leading-relaxed max-w-prose">

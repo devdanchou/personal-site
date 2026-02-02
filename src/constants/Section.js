@@ -27,8 +27,8 @@ export const SECTIONS = [
 ];
 
 export const PROJECT_SECTIONS = [
-  { img: projectImg, name: "Project one" },
-  { img: projectImg, name: "Project two" },
-  { img: projectImg, name: "Project three" },
-  { img: projectImg, name: "Project four" },
+  { img: projectImg, name: "Project-one" },
+  { img: projectImg, name: "Project-two" },
+  { img: projectImg, name: "Project-three" },
+  { img: projectImg, name: "Project-four" },
 ];
