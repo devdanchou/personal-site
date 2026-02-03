@@ -1,19 +1,21 @@
 import NavBar from "../shared-components/NavBar";
 import IntroSection from "../components/IntroSection";
 import MiddleSection from "../components/MiddleSection";
+import FooterSection from "../shared-components/FooterSection";
 
 const LandingPage = () => {
   return (
     <>
-      <nav>
-        <NavBar />
-      </nav>
+      <NavBar />
       <section>
         <IntroSection />
       </section>
       <section>
         <MiddleSection />
       </section>
+      <footer>
+        <FooterSection />
+      </footer>
     </>
   );
 };

@@ -3,7 +3,7 @@ import portraitImg from "../../assets/personal-portrait.png";
 const AboutSection = () => {
   return (
     <div className="flex justify-center w-full my-10 font-bvp font-light">
-      <div className="flex flex-col md:flex-row gap-12 lg:gap-24 max-w-full lg:max-w-[1280px] xl:max-w-[1500px] mt-14 w-full mx-6 md:mx-4">
+      <div className="flex flex-col md:flex-row gap-12 lg:gap-14 max-w-full lg:max-w-[1280px] xl:max-w-[1500px] mt-14 w-full mx-6 md:mx-4">
         <div className="md:basis-[55%] lg:basis-[60%]">
           <img
             className="aspect-[3/4] md:aspect-[4/5] lg:aspect-[3/4] shadow-lg rounded-sm"

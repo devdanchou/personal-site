@@ -1,15 +1,17 @@
 import NavBar from "../shared-components/NavBar";
 import AboutSection from "../components/AboutSection";
+import FooterSection from "../shared-components/FooterSection";
 
 const AboutPage = () => {
   return (
     <>
-      <nav>
-        <NavBar />
-      </nav>
+      <NavBar />
       <section>
         <AboutSection />
       </section>
+      <footer>
+        <FooterSection />
+      </footer>
     </>
   );
 };
